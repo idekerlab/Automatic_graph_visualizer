@@ -4,4 +4,4 @@
 `$ sudo docker build -t pytorch -f .`
 
 dockerイメージからコンテナを作成して起動  
-`$ ./run_docker.sh`
+`$ bash run_docker.sh`
