@@ -1,5 +1,5 @@
 # base:ubuntu(18.04)
-FROM  ubuntu:latest
+FROM  ubuntu:18.04
 LABEL maintainer="agis"
 
 RUN    apt update  -qy
@@ -25,35 +25,8 @@ RUN    pip3 install -q seaborn
 RUN    pip3 install -q py2cytoscape
 RUN    pip3 install -q ndex2
 
-####    from https://hub.docker.com/r/rocker/r-base/dockerfile
-
-## Use Debian unstable via pinning -- new style via APT::Default-Release
-RUN echo "deb http://http.debian.net/debian sid main" > /etc/apt/sources.list.d/debian-unstable.list \
-        && echo 'APT::Default-Release "testing";' > /etc/apt/apt.conf.d/default
-
-ENV R_BASE_VERSION 3.6.1
-
-## Now install R and littler, and create a link for littler in /usr/local/bin
-RUN apt install -t unstable -y --no-install-recommends \
-		littler \
-        r-cran-littler \
-		r-base=${R_BASE_VERSION}-* \
-		r-base-dev=${R_BASE_VERSION}-* \
-		r-recommended=${R_BASE_VERSION}-* \
-	&& ln -s /usr/lib/R/site-library/littler/examples/install.r /usr/local/bin/install.r \
-	&& ln -s /usr/lib/R/site-library/littler/examples/install2.r /usr/local/bin/install2.r \
-	&& ln -s /usr/lib/R/site-library/littler/examples/installGithub.r /usr/local/bin/installGithub.r \
-	&& ln -s /usr/lib/R/site-library/littler/examples/testInstalled.r /usr/local/bin/testInstalled.r \
-	&& install.r docopt \
-	&& rm -rf /tmp/downloaded_packages/ /tmp/*.rds \
-	&& rm -rf /var/lib/apt/lists/*
-
-
-
 
 # prepare for install R
-#RUN    echo -e "\n## For R package"  | tee -a /etc/apt/sources.list
-#RUN    echo "deb https://cran.rstudio.com/bin/linux/ubuntu $(lsb_release -cs)-cran35/" | tee -a /etc/apt/sources.list
-#RUN    gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
-#RUN    gpg -a --export E298A3A825C0D65DFD57CBB651716619E084DAB9 | apt-key add -
+#RUN    apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
+#RUN    add-apt-repository 'deb https://cloud.r-project.org/bin/linux/ubuntu bionic-cran35/'
 #RUN    apt install r-base
