@@ -24,6 +24,8 @@ RUN    pip3 install -q matplotlib
 RUN    pip3 install -q seaborn
 RUN    pip3 install -q py2cytoscape
 RUN    pip3 install -q ndex2
+RUN    pip3 install -q fa2
+RUN    pip3 install -q matplotlib
 
 
 # prepare for install R
