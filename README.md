@@ -1,7 +1,14 @@
-# docker
-## 使い方
-このディレクトリに移動し、dockerファイルをビルドしてdockerイメージをつくる  
-`$ sudo docker build -t ucsd -f .`
+# Automatic Graph Visualizer
+## Environmental construction
 
-dockerイメージからコンテナを作成して起動  
+Build the docker
+
+`$ sudo docker build -t autoGV -f .`
+
+Activate from the docker image
+
 `$ bash run_docker.sh`
+
+You can use Jupyter-lab 
+
+`$ bash jupyter-lab.sh`
