@@ -3,7 +3,7 @@
 
 Build the docker
 
-`$ sudo docker build -t autoGV -f .`
+`$ sudo docker build -t autogv -f .`
 
 Activate from the docker image
 
