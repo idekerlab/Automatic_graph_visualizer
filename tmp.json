@@ -122,10 +122,6 @@
                     "EDGE_STROKE_UNSELECTED_PAINT": {
                         "type": "PASSTHROUGH",
                         "definition": "COL=colors.community.greedy,T=string"
-                    },
-                    "EDGE_TRANSPARENCY": {
-                        "type": "CONTINUOUS",
-                        "definition": "COL=community.greedy,T=double,L=0=40,E=0=200,G=0=200,OV=0=1.0"
                     }
                 }
             }
