@@ -125,7 +125,7 @@
                     },
                     "EDGE_TRANSPARENCY": {
                         "type": "DISCRETE",
-                        "definition": "COL=community.greedy,T=string,K=0=-1,V=0=100"
+                        "definition": "COL=community.greedy,T=string,K=0=-1,V=0=30"
                     }
                 }
             }
