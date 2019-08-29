@@ -1,5 +1,5 @@
 # Automatic Graph Visualizer
-## Environmental construction
+## Environment(Docker) setup
 
 Build the docker
 
